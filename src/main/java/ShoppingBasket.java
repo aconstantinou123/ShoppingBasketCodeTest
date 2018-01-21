@@ -41,6 +41,14 @@ public class ShoppingBasket {
         return discounts.size();
     }
 
+    public void removeItem(Item item){
+        this.items.remove(item);
+    }
+
+    public void emptyBaskete(){
+        this.items.clear();
+    }
+
     public double totalPrice(){
         for (IDiscount discount : discounts) {
             if (discount instanceof Bogof){

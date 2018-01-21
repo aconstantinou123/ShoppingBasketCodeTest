@@ -52,6 +52,24 @@ public class ShoppingBasketTest {
     }
 
     @Test
+    public void canRemoveItem() {
+        shoppingBasket1.addItems(chicken1);
+        shoppingBasket1.addItems(blanket1);
+        shoppingBasket1.addItems(blanket2);
+        shoppingBasket1.removeItem(blanket2);
+        assertEquals(2, shoppingBasket1.itemsSize());
+    }
+
+    @Test
+    public void canRemoveAllItems() {
+        shoppingBasket1.addItems(chicken1);
+        shoppingBasket1.addItems(blanket1);
+        shoppingBasket1.addItems(blanket2);
+        shoppingBasket1.emptyBaskete();
+        assertEquals(0, shoppingBasket1.itemsSize());
+    }
+
+    @Test
     public void canGetTotalPrice(){
         shoppingBasket1.addItems(chicken1);
         shoppingBasket1.addItems(blanket1);
@@ -61,7 +79,7 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void canGetTotalPricePlusDiscounts_1() {
+    public void canGetTotalPricePlusDiscounts_1(){
         shoppingBasket1.addItems(chicken1);
         shoppingBasket1.addItems(blanket1);
         shoppingBasket1.addItems(blanket2);
